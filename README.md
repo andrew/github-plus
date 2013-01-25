@@ -2,6 +2,11 @@
 
 A Google Chrome extension that adds extra features to GitHub.com
 
+## Features
+
+* Show messages from status.github.com if GitHub is having any availability issues
+* Warn when a repo has not been updated in over 6 months
+
 ## Development
 
 Source hosted at [GitHub](http://github.com/andrew/github-plus).
