@@ -28,3 +28,26 @@ if(out_of_date){
   $('#repo_details').attr('style','border-bottom:none;border-radius:0;margin-bottom:0;')
   $('#repo_details').after("<div style='padding:10px;border-bottom-right-radius:5px; border-bottom-left-radius:5px; background:#cc3300; color:#fff;height:auto !important;'>"+message+"</div>")
 }
+
+// check to see if the project is tested on travis-ci.org
+path = $('.entry-title strong a').attr('href')
+if(path){
+  $.get('https://api.travis-ci.org/repos'+path, function(data, err) {
+    console.log(data)
+    if(data.last_build_id != null){
+      statuses = {
+        0: 'Passing',
+        1: 'Failing',
+        null: 'Building'
+      }
+      styles = {
+        0: 'background:#339966;',
+        1: 'background:#cc3300;',
+        null: 'background:#f29d50;'
+      }
+      text = "Travis - " + statuses[data.last_build_result] + ' ' + jQuery.timeago(data.last_build_started_at)
+      travis_link = '<a style="float: right;margin: -2px 0; color:#fff; text-shadow:none; border:none; '+styles[data.last_build_result]+'" class="button minibutton" href="http://travis-ci.org' + path + '">'+text+'</a>'
+      $('span.name').prepend(travis_link)
+    }
+  });
+}

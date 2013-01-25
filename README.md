@@ -6,6 +6,7 @@ A Google Chrome extension that adds extra features to GitHub.com
 
 * Show messages from status.github.com if GitHub is having any availability issues
 * Warn when a repo has not been updated in over 6 months
+* Show the current testing status from Travis CI
 
 ## Development
 
