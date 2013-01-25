@@ -1,0 +1,20 @@
+{
+	"name": "GitHub Plus",
+	"version": "0.1",
+	"manifest_version" : 2,
+	"description": "Extra GitHub functions for hardcore users",
+	"background" : {
+		"page" : "background.html"
+	},
+	"content_scripts": [
+	{
+		"matches": ["https://*.github.com/*"],
+		"js": ["lib/jquery.js", "lib/jquery.timeago.js", "scripts/main.js"]
+	}
+	],
+	"icons": {
+		"16": "icons/16.png",
+		"48": "icons/48.png",
+		"128": "icons/128.png"
+	}
+}
