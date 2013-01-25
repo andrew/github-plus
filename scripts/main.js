@@ -12,15 +12,12 @@ $.getJSON('https://status.github.com/api/last-message.json', function(data) {
   }
 });
 
+// Warn when a repo has not been updated in over 6 months
 last_commit = $('.tree-browser-wrapper .commit-tease .js-relative-date')
-
 last_commit_date = new Date(last_commit.attr('datetime'))
-
 var now = new Date();
-
 abandoned = now.setDate(now.getDate()-180); 
 abandoned = new Date(abandoned)
-
 out_of_date = abandoned.getTime() > last_commit_date.getTime()
 
 if(out_of_date){
