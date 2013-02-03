@@ -38,13 +38,13 @@ if(path){
         null: 'Building'
       }
       styles = {
-        0: 'background:#339966;',
+        0: 'background:#38c531;',
         1: 'background:#cc3300;',
         null: 'background:#f29d50;'
       }
       text = "Travis - " + statuses[data.last_build_result] + ' ' + jQuery.timeago(data.last_build_started_at)
-      travis_link = '<a style="float: right;margin: -2px 0; color:#fff; text-shadow:none; border:none; '+styles[data.last_build_result]+'" class="button minibutton" href="http://travis-ci.org' + path + '">'+text+'</a>'
-      $('span.name').prepend(travis_link)
+      travis_link = '<a style="float: right;margin: -2px 0; color:#fff; text-shadow:0px 1px 1px #777 !important; box-shadow:0px 1px 1px #777; border:none; '+styles[data.last_build_result]+'" class="button minibutton" href="http://travis-ci.org' + path + '">'+text+'</a>'
+      $('#readme span.name').prepend(travis_link)
     }
   });
 }
