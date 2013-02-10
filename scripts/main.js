@@ -48,3 +48,9 @@ if(path){
     }
   });
 }
+
+// Add Dashboard links (Issues, Pulls and Stars) to header nav and remove Blog and Help
+$('.top-nav').css('width', '310px')
+$('.top-nav li')[2].remove() // remove blog
+$('.top-nav li')[2].remove() // remove help
+$('.top-nav').append('<li><a href="/dashboard/issues">Issues</a></li><li><a href="/dashboard/pulls">Pull Requests</a></li><li><a href="/dashboard/stars">Stars</a></li>')
