@@ -53,4 +53,4 @@ if(path){
 $('.top-nav').css('width', '310px')
 $('.top-nav li')[2].remove() // remove blog
 $('.top-nav li')[2].remove() // remove help
-$('.top-nav').append('<li><a href="/dashboard/issues">Issues</a></li><li><a href="/dashboard/pulls">Pull Requests</a></li><li><a href="/dashboard/stars">Stars</a></li>')
+$('.top-nav').append('<li><a href="/dashboard/issues">Issues</a></li><li><a href="/dashboard/pulls">Pull Requests</a></li><li><a href="/stars">Stars</a></li>')
